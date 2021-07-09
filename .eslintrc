@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "parser": "typescript-eslint/parser",
+  "plugins": [
+    "svelte3",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/indent": ["error", 2],
+    "indent": ["error", 2],
+    "no-unused-vars": "error",
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single"],
+    "semi": "error"
+  },
+  "settings": {
+    "svelte3/typescript": true
+  }
+}

@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import {terser} from 'rollup-plugin-terser';
-import sveltePreprocess from 'svelte-preprocess';
+import autoPreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import replace from '@rollup/plugin-replace';
@@ -41,15 +41,14 @@ export default {
   },
   plugins: [
     svelte({
-      preprocess: sveltePreprocess({
+      preprocess: autoPreprocess({
         sourceMap: !production,
         postcss: true,
-        scss: {includePaths: ['src', 'node_modules']},
       }),
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production
-      }
+      },
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance

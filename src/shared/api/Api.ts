@@ -1,9 +1,9 @@
-import type {AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse} from 'axios';
+import type { AxiosInstance, AxiosResponse } from 'axios';
 import axios from 'axios';
-import {AUTH_URL, BASE_URL} from '../Paths';
-import {TOKEN_STORAGE_KEY} from '../Constants';
+import { AUTH_URL, BASE_URL } from '../Paths';
+import { TOKEN_STORAGE_KEY } from '../Constants';
 import qs from 'qs';
-import type {AuthenticationRequest, Jwt} from '../model/Token';
+import type { AuthenticationRequest, Jwt } from '../model/system/TokenModel';
 
 export const API = (): AxiosInstance => {
   const token = sessionStorage.getItem(TOKEN_STORAGE_KEY);

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {UserStore} from '../../shared/store/UserStore';
-  import {useLocation, useNavigate} from 'svelte-navigator';
+  import { UserStore } from '../../shared/store/UserStore';
+  import { useLocation, useNavigate } from 'svelte-navigator';
 
   export let appName: string = 'Elements';
   const navigate = useNavigate();
@@ -13,8 +13,7 @@
   const login = () => {
     UserStore.login(username, password).then(success => {
       if (success) {
-        const from = $location.state?.from || '/';
-        navigate(from, {replace: true});
+        navigate('/', {replace: true});
       }
     });
   };

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {useNavigate, useLocation} from 'svelte-navigator';
-  import {UserStore} from '../store/UserStore';
+  import { useNavigate, useLocation } from 'svelte-navigator';
+  import { UserStore } from '../store/UserStore';
 
   const {currentUser, tryRestore} = UserStore;
   const navigate = useNavigate();
@@ -20,4 +20,6 @@
 
 {#if $currentUser}
   <slot />
+{:else}
+  <h1>Restoring user...</h1>
 {/if}

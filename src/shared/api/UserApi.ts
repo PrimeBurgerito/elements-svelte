@@ -1,4 +1,4 @@
-import type {User} from '../model/User';
+import type {User} from '../model/system/UserModel';
 import type {AxiosResponse} from 'axios';
 import {API} from './Api';
 import AuthApi from './AuthApi';

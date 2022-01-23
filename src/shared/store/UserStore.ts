@@ -1,7 +1,6 @@
-import type {User} from '../model/User';
+import type { User } from '../model/system/UserModel';
 import UserApi from '../api/UserApi';
-import {derived, Readable, Writable} from 'svelte/store';
-import {writable} from 'svelte/store';
+import { derived, Readable, Writable, writable } from 'svelte/store';
 
 class Store {
   private _currentUser: Writable<User | null> = writable<User | null>(null);

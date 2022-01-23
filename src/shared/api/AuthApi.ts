@@ -1,5 +1,5 @@
 import {TOKEN_STORAGE_KEY} from '../Constants';
-import type {Jwt} from '../model/Token';
+import type {Jwt} from '../model/system/TokenModel';
 import {AUTH_POST} from './Api';
 
 class AuthApi {

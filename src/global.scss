@@ -1,16 +1,14 @@
-@import "node_modules/tailwindcss/base";
-@import "node_modules/tailwindcss/components";
-@import "node_modules/tailwindcss/utilities";
-
 html, body, main {
   height: 100%;
-  @apply text-white;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  @apply text-white
 }
 
 main {
-  position: relative;
   padding: 1em;
-  margin: 0 auto;
+  position: relative;
   background: #222;
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 }
@@ -46,17 +44,41 @@ button {
 div.card {
   padding: 0.75rem;
   border-style: solid;
-  border-image-source: url(/images/border-image.png);
+  border-image-source: url(/images/border/border-image.png);
   border-image-repeat: repeat;
   border-image-slice: 6 6 6 6;
   border-width: 15px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  background: url(/images/background-image.png) center;
+  background: url(/images/background/background-image.png) center;
   background-clip: padding-box;
   background-origin: padding-box;
   image-rendering: pixelated;
+  //min-width: fit-content;
+}
+
+div.framed-gray {
+  border-style: solid;
+  border-image-source: url(/images/border/border-image-grey.png);
+  border-image-repeat: repeat;
+  border-image-slice: 3 3 3 3;
+  border-width: 7px;
+  padding: 12px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: url(/images/background/background-image-grey.png) center;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  image-rendering: pixelated;
+}
+
+hr {
+  display: block;
+  border: 0;
+  height: 10px;
+  background: url(/images/hr.png) top left repeat-x;
 }
 
 input {
@@ -64,4 +86,33 @@ input {
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000 !important;
   font-size: .9em !important;
   line-height: 32px !important;
+}
+
+ul.select-ui {
+  padding: 0;
+  z-index: 100;
+  background: url(/images/list/list-background.png);
+  -webkit-border-image: url(/images/list/list-border.png) 10% repeat repeat;
+  min-height: 40px;
+  margin-top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-style: solid;
+  border-width: 7px;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  color: #fff;
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      color: #ff0;
+    }
+
+    &.active {
+      background: rgba(0, 0, 0, .3);
+    }
+  }
 }
